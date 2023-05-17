@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Sudoku">
+      <UniqueIdentifier>{eff1a114-6baa-43b1-9a6a-2f8d8194f392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sudoku">
+      <UniqueIdentifier>{aec8e86a-e6b6-4220-9074-88871594c1de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Connector">
+      <UniqueIdentifier>{c5cbc146-1524-43b2-be8e-101ee528035a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Connector">
+      <UniqueIdentifier>{32bb2fd1-2758-4e18-a2cd-5a36d7893739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Solver">
+      <UniqueIdentifier>{e97f93d8-9cc8-428e-9ec9-ea10e85d1c46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Solver">
+      <UniqueIdentifier>{e0627feb-3b1e-4774-bd98-ee080a5d731a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ZeroMQ">
+      <UniqueIdentifier>{497e675c-4e9b-4e6b-a752-40548d2b2c40}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseSudokuSolver.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicSudokuSolver.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="OptimizedSudokuSolver.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="SudokuSerializer.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="SudokuTester.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="Connector.cpp">
+      <Filter>Source Files\Connector</Filter>
+    </ClCompile>
+    <ClCompile Include="ISolver.cpp">
+      <Filter>Source Files\Solver</Filter>
+    </ClCompile>
+    <ClCompile Include="SolverManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseSudokuSolver.h">
+      <Filter>Header Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicSudokuSolver.h">
+      <Filter>Header Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="OptimizedSudokuSolver.h">
+      <Filter>Header Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="SudokuSerializer.h">
+      <Filter>Header Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="SudokuTester.h">
+      <Filter>Header Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="Connector.h">
+      <Filter>Header Files\Connector</Filter>
+    </ClInclude>
+    <ClInclude Include="ISolver.h">
+      <Filter>Header Files\Solver</Filter>
+    </ClInclude>
+    <ClInclude Include="zmq.hpp">
+      <Filter>Header Files\ZeroMQ</Filter>
+    </ClInclude>
+    <ClInclude Include="zmq_addon.hpp">
+      <Filter>Header Files\ZeroMQ</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
