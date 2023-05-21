@@ -1,7 +1,7 @@
 #include "BaseSudokuSolver.h"
 #include "SudokuSerializer.h"
 
-std::string BaseSudokuSolver::solve(std::string request)
+std::string BaseSudokuSolver::solve(std::string& request)
 {
 	auto sudoku = SudokuSerializer::deserialize(request);
 	if (solveSudoku(sudoku))

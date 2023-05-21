@@ -9,7 +9,7 @@ class BaseSudokuSolver : public virtual ISolver
 {
 public:
 	BaseSudokuSolver();
-	std::string solve(std::string request) override;
+	std::string solve(std::string& request) override;
 
 	virtual bool solveSudoku(vector<vector<int>>& inputSudoku) = 0;
 	virtual ~BaseSudokuSolver() = default;

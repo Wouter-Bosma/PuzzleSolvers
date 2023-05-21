@@ -9,6 +9,8 @@ namespace PuzzleGui
         private SolverConnectivity connection;
         private bool initialized = false;
         private IPuzzleSolver sudokuSolver;
+        private IPuzzleSolver wordPathDepth;
+        private IPuzzleSolver wordPathShort;
         private Process? mySolver = null;
 
         public MainWindow()
@@ -18,6 +20,8 @@ namespace PuzzleGui
             initialized = true;
             connection = new SolverConnectivity();
             sudokuSolver = new Sudoku(connection, sudokuDataGridView, resultTextBox);
+            wordPathDepth = new WordPathSolver(connection, wordPathStartTextBox, wordPathEndTextBox, wordPathResultTextBox, resultTextBox, true);
+            wordPathShort = new WordPathSolver(connection, wordPathStartTextBox, wordPathEndTextBox, wordPathResultTextBox, resultTextBox, false);
         }
 
         private void Connect()
@@ -98,6 +102,7 @@ namespace PuzzleGui
 
             mySolver = new Process();
             mySolver.StartInfo.FileName = filePath;
+            mySolver.StartInfo.WorkingDirectory = Path.GetDirectoryName(filePath);
             if (mySolver.Start())
             {
                 resultTextBox.AppendText($"Solver is started from {filePath}.{Environment.NewLine}");
@@ -126,6 +131,16 @@ namespace PuzzleGui
             {
                 mySolver.Kill();
             }
+        }
+
+        private void wordPathDepthButton_Click(object sender, EventArgs e)
+        {
+            wordPathDepth.Solve();
+        }
+
+        private void wordPathShortestButton_Click(object sender, EventArgs e)
+        {
+            wordPathShort.Solve();
         }
     }
 }

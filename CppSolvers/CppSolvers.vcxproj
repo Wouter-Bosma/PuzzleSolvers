@@ -103,6 +103,9 @@
       <Command>
       </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>xcopy /D $(SolutionDir)Resources $(SolutionDir)$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -128,6 +131,9 @@
       <Command>
       </Command>
     </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>xcopy /D $(SolutionDir)Resources $(SolutionDir)$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -144,6 +150,9 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /D $(SolutionDir)Resources $(SolutionDir)$(Platform)\$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -164,6 +173,9 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /D $(SolutionDir)Resources $(SolutionDir)$(Platform)\$(Configuration)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BasicSudokuSolver.cpp" />
@@ -174,6 +186,10 @@
     <ClCompile Include="Connector.cpp" />
     <ClCompile Include="SolverManager.cpp" />
     <ClCompile Include="SudokuTester.cpp" />
+    <ClCompile Include="WordPathSolvers.cpp" />
+    <ClCompile Include="WordPathSerializer.cpp" />
+    <ClCompile Include="WordPath.cpp" />
+    <ClCompile Include="WordPathChallenge.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BasicSudokuSolver.h" />
@@ -183,11 +199,20 @@
     <ClInclude Include="SudokuSerializer.h" />
     <ClInclude Include="Connector.h" />
     <ClInclude Include="SudokuTester.h" />
+    <ClInclude Include="WordPathSolvers.h" />
+    <ClInclude Include="WordPathSerializer.h" />
+    <ClInclude Include="WordPath.h" />
+    <ClInclude Include="WordPathChallenge.h" />
     <ClInclude Include="zmq.hpp" />
     <ClInclude Include="zmq_addon.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\4letters.txt" />
+    <Text Include="Resources\5letters.txt" />
+    <Text Include="Resources\6letters.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

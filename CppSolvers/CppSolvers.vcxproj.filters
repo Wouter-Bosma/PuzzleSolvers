@@ -34,6 +34,12 @@
     <Filter Include="Header Files\ZeroMQ">
       <UniqueIdentifier>{497e675c-4e9b-4e6b-a752-40548d2b2c40}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\WordPath">
+      <UniqueIdentifier>{a97b705c-89c4-494e-849d-31b3256f059f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\WordPath">
+      <UniqueIdentifier>{8fa789a2-dbad-4feb-bbba-37d712abbbe1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseSudokuSolver.cpp">
@@ -59,6 +65,18 @@
     </ClCompile>
     <ClCompile Include="SolverManager.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WordPath.cpp">
+      <Filter>Source Files\WordPath</Filter>
+    </ClCompile>
+    <ClCompile Include="WordPathChallenge.cpp">
+      <Filter>Source Files\WordPath</Filter>
+    </ClCompile>
+    <ClCompile Include="WordPathSerializer.cpp">
+      <Filter>Source Files\WordPath</Filter>
+    </ClCompile>
+    <ClCompile Include="WordPathSolvers.cpp">
+      <Filter>Source Files\WordPath</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,8 +107,31 @@
     <ClInclude Include="zmq_addon.hpp">
       <Filter>Header Files\ZeroMQ</Filter>
     </ClInclude>
+    <ClInclude Include="WordPath.h">
+      <Filter>Header Files\WordPath</Filter>
+    </ClInclude>
+    <ClInclude Include="WordPathChallenge.h">
+      <Filter>Header Files\WordPath</Filter>
+    </ClInclude>
+    <ClInclude Include="WordPathSerializer.h">
+      <Filter>Header Files\WordPath</Filter>
+    </ClInclude>
+    <ClInclude Include="WordPathSolvers.h">
+      <Filter>Header Files\WordPath</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Resources\5letters.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\6letters.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Resources\4letters.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -4,6 +4,6 @@
 class ISolver
 {
 public:
-	virtual std::string solve(std::string) = 0;
+	virtual std::string solve(std::string&) = 0;
 };
 

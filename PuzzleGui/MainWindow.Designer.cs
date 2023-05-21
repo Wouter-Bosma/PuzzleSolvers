@@ -48,9 +48,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             mainWindowControl = new TabControl();
             tabPage1 = new TabPage();
+            label2 = new Label();
+            label1 = new Label();
             startSolverButton = new Button();
             button2 = new Button();
             sudokuPage = new TabPage();
+            textBox1 = new TextBox();
             clearButton = new Button();
             checkButton = new Button();
             solveSudokuButton = new Button();
@@ -64,14 +67,18 @@
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
+            tabPage2 = new TabPage();
+            wordPathShortestButton = new Button();
+            wordPathDepthButton = new Button();
+            wordPathResultTextBox = new TextBox();
+            wordPathEndTextBox = new TextBox();
+            wordPathStartTextBox = new TextBox();
             resultTextBox = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox1 = new TextBox();
             mainWindowControl.SuspendLayout();
             tabPage1.SuspendLayout();
             sudokuPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)sudokuDataGridView).BeginInit();
+            tabPage2.SuspendLayout();
             SuspendLayout();
             // 
             // mainWindowControl
@@ -79,6 +86,7 @@
             mainWindowControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainWindowControl.Controls.Add(tabPage1);
             mainWindowControl.Controls.Add(sudokuPage);
+            mainWindowControl.Controls.Add(tabPage2);
             mainWindowControl.Location = new Point(0, 0);
             mainWindowControl.Margin = new Padding(3, 2, 3, 2);
             mainWindowControl.Name = "mainWindowControl";
@@ -100,6 +108,24 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Connectivity";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(91, 75);
+            label2.Name = "label2";
+            label2.Size = new Size(421, 15);
+            label2.TabIndex = 3;
+            label2.Text = "When the solver is manually launched this button can be used to connect to it.";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(91, 7);
+            label1.Name = "label1";
+            label1.Size = new Size(444, 15);
+            label1.TabIndex = 2;
+            label1.Text = "Button to automatically start the c++ executable with the solvers and connect to it.";
             // 
             // startSolverButton
             // 
@@ -140,6 +166,16 @@
             sudokuPage.TabIndex = 1;
             sudokuPage.Text = "Sudoku";
             sudokuPage.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(325, 8);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(361, 189);
+            textBox1.TabIndex = 4;
+            textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // clearButton
             // 
@@ -256,6 +292,63 @@
             Column9.Name = "Column9";
             Column9.Width = 25;
             // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(wordPathShortestButton);
+            tabPage2.Controls.Add(wordPathDepthButton);
+            tabPage2.Controls.Add(wordPathResultTextBox);
+            tabPage2.Controls.Add(wordPathEndTextBox);
+            tabPage2.Controls.Add(wordPathStartTextBox);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(692, 295);
+            tabPage2.TabIndex = 2;
+            tabPage2.Text = "WordPath";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // wordPathShortestButton
+            // 
+            wordPathShortestButton.Location = new Point(114, 35);
+            wordPathShortestButton.Name = "wordPathShortestButton";
+            wordPathShortestButton.Size = new Size(75, 23);
+            wordPathShortestButton.TabIndex = 4;
+            wordPathShortestButton.Text = "Shortest";
+            wordPathShortestButton.UseVisualStyleBackColor = true;
+            wordPathShortestButton.Click += wordPathShortestButton_Click;
+            // 
+            // wordPathDepthButton
+            // 
+            wordPathDepthButton.Location = new Point(114, 5);
+            wordPathDepthButton.Name = "wordPathDepthButton";
+            wordPathDepthButton.Size = new Size(75, 23);
+            wordPathDepthButton.TabIndex = 3;
+            wordPathDepthButton.Text = "Depth";
+            wordPathDepthButton.UseVisualStyleBackColor = true;
+            wordPathDepthButton.Click += wordPathDepthButton_Click;
+            // 
+            // wordPathResultTextBox
+            // 
+            wordPathResultTextBox.Location = new Point(195, 6);
+            wordPathResultTextBox.Multiline = true;
+            wordPathResultTextBox.Name = "wordPathResultTextBox";
+            wordPathResultTextBox.Size = new Size(147, 283);
+            wordPathResultTextBox.TabIndex = 2;
+            // 
+            // wordPathEndTextBox
+            // 
+            wordPathEndTextBox.Location = new Point(8, 35);
+            wordPathEndTextBox.Name = "wordPathEndTextBox";
+            wordPathEndTextBox.Size = new Size(100, 23);
+            wordPathEndTextBox.TabIndex = 1;
+            // 
+            // wordPathStartTextBox
+            // 
+            wordPathStartTextBox.Location = new Point(8, 6);
+            wordPathStartTextBox.Name = "wordPathStartTextBox";
+            wordPathStartTextBox.Size = new Size(100, 23);
+            wordPathStartTextBox.TabIndex = 0;
+            // 
             // resultTextBox
             // 
             resultTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -266,34 +359,6 @@
             resultTextBox.ReadOnly = true;
             resultTextBox.Size = new Size(692, 57);
             resultTextBox.TabIndex = 2;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(91, 7);
-            label1.Name = "label1";
-            label1.Size = new Size(444, 15);
-            label1.TabIndex = 2;
-            label1.Text = "Button to automatically start the c++ executable with the solvers and connect to it.";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(91, 75);
-            label2.Name = "label2";
-            label2.Size = new Size(421, 15);
-            label2.TabIndex = 3;
-            label2.Text = "When the solver is manually launched this button can be used to connect to it.";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(325, 8);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(361, 189);
-            textBox1.TabIndex = 4;
-            textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // MainWindow
             // 
@@ -312,6 +377,8 @@
             sudokuPage.ResumeLayout(false);
             sudokuPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)sudokuDataGridView).EndInit();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -340,5 +407,11 @@
         private Label label2;
         private Label label1;
         private TextBox textBox1;
+        private TabPage tabPage2;
+        private Button wordPathShortestButton;
+        private Button wordPathDepthButton;
+        private TextBox wordPathResultTextBox;
+        private TextBox wordPathEndTextBox;
+        private TextBox wordPathStartTextBox;
     }
 }
